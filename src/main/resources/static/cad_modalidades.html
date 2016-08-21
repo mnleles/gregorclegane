@@ -72,13 +72,10 @@
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>                    
-                    <li class="active">Alunos</li>
+                    <li class="active">Modalidade</li>
+                    <li class="active">Cadastro</li>
                 </ul>
-                <!-- END BREADCRUMB -->                
-                
-                <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Alunos</h2>
-                </div>                   
+                <!-- END BREADCRUMB -->                             
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
@@ -86,14 +83,52 @@
                     <div class="row">
                         <div class="col-md-12">
 
+                            <form class="form-horizontal">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Panel Title</h3>
+                                    <h3 class="panel-title"><strong>Modalidade</strong> Cadastro</h3>
+                                    <ul class="panel-controls">
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul>
                                 </div>
-                                <div class="panel-body">
-                                    Panel body
+                                <div class="panel-body">                                                                        
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Descrição</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control"/>
+                                            </div>                                            
+                                            <span class="help-block">Descrição da Modalidade</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">                                        
+                                        <label class="col-md-3 col-xs-12 control-label">Iniciada em</label>
+                                        <div class="col-md-6 col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                <input type="text" class="form-control datepicker" value="2014-11-01">                                            
+                                            </div>
+                                            <span class="help-block">Clique no campo de entrada para obter a data</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Status</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                        
+                                            <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> Ativo</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-default">Limpar Formulário</button>                                    
+                                    <button class="btn btn-primary pull-right">Gravar</button>
                                 </div>
                             </div>
+                            </form>
 
                         </div>
                     </div>
@@ -138,8 +173,14 @@
         <!-- END PLUGINS -->
 
         <!-- THIS PAGE PLUGINS -->
-
-        <!-- END PAGE PLUGINS -->         
+        <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>                
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+        <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+        <!-- END THIS PAGE PLUGINS -->               
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/plugins.js"></script>        
