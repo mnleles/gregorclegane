@@ -41,11 +41,23 @@
                         </div>                                                                        
                     </li>                                                                                         
                     <li class="xn-title">Navegação</li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Alunos</span></a>
+                        <ul>
+                            <li><a href="lista_alunos.html">Lista</a></li>
+                            <li><a href="index.html">Cadastro</a></li>
+                        </ul>
+                    </li>                    
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-list"></span> <span class="xn-text">Modalidades</span></a>
+                        <ul>
+                            <li><a href="cad_modalidades.html">Lista</a></li>
+                            <li><a href="cad_modalidades.html">Cadastro</a></li>
+                        </ul>
+                    </li>
                     <li>
-                        <a href="index.html"><span class="fa fa-users"></span> <span class="xn-text">Alunos</span></a>
-                        <a href="cad_modalidades.html"><span class="fa fa-list"></span> <span class="xn-text">Modalidades</span></a>
-                        <a href="index.html"><span class="fa fa-money"></span> <span class="xn-text">Pagamentos</span></a>
-                    </li>                                        
+                        <a href="#"><span class="fa fa-money"></span> <span class="xn-text">Pagamentos</span></a>
+                    </li>
                 </ul>
                 <!-- END X-NAVIGATION -->
             </div>
@@ -73,12 +85,9 @@
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>                    
                     <li class="active">Alunos</li>
+                    <li class="active">Cadastro</li>
                 </ul>
                 <!-- END BREADCRUMB -->                
-                
-                <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Alunos</h2>
-                </div>                   
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
@@ -86,14 +95,71 @@
                     <div class="row">
                         <div class="col-md-12">
 
+                            <form class="form-horizontal">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Panel Title</h3>
+                                    <h3 class="panel-title">Cadastro de <strong>Aluno</strong></h3>
+                                    <ul class="panel-controls">
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul>
                                 </div>
-                                <div class="panel-body">
-                                    Panel body
+                                <div class="panel-body">                                                                        
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Nome</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control"/>
+                                            </div>                                            
+                                            <span class="help-block">Nome do Aluno</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">                                        
+                                        <label class="col-md-3 col-xs-12 control-label">Nascimento</label>
+                                        <div class="col-md-6 col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                <input type="text" class="form-control datepicker" value="2014-11-01">                                            
+                                            </div>
+                                            <span class="help-block">Clique no campo de entrada para obter a data</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Endereço</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control"/>
+                                            </div>                                            
+                                            <span class="help-block">Endereço do Aluno</span>
+                                        </div>
+                                    </div>                                    
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Modalidades</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <input type="text" class="tagsinput" value="Musculação,Dança,CrossFit"/>
+                                            <span class="help-block">Lista de modalidades</span>
+                                        </div>
+                                    </div>                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Status</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                        
+                                            <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> Ativo</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-default">Limpar Formulário</button>                                    
+                                    <button class="btn btn-primary pull-right">Gravar</button>
                                 </div>
                             </div>
+                            </form>
 
                         </div>
                     </div>
@@ -138,7 +204,13 @@
         <!-- END PLUGINS -->
 
         <!-- THIS PAGE PLUGINS -->
-
+        <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>                
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+        <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
         <!-- END PAGE PLUGINS -->         
 
         <!-- START TEMPLATE -->

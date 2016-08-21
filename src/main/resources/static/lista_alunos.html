@@ -57,7 +57,7 @@
                     </li>
                     <li>
                         <a href="#"><span class="fa fa-money"></span> <span class="xn-text">Pagamentos</span></a>
-                    </li>                                      
+                    </li>
                 </ul>
                 <!-- END X-NAVIGATION -->
             </div>
@@ -84,10 +84,10 @@
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>                    
-                    <li class="active">Modalidade</li>
-                    <li class="active">Cadastro</li>
+                    <li class="active">Alunos</li>
+                    <li class="active">Lista</li>
                 </ul>
-                <!-- END BREADCRUMB -->                             
+                <!-- END BREADCRUMB -->                
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
@@ -95,52 +95,73 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <form class="form-horizontal">
+                    <!-- START RESPONSIVE TABLES -->
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="panel panel-default">
+
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Modalidade</strong> Cadastro</h3>
+                                    <h3 class="panel-title">Lista de <strong>Alunos</strong></h3>
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                                     </ul>
                                 </div>
-                                <div class="panel-body">                                                                        
-                                    
-                                    <div class="form-group">
-                                        <label class="col-md-3 col-xs-12 control-label">Descrição</label>
-                                        <div class="col-md-6 col-xs-12">                                            
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control"/>
-                                            </div>                                            
-                                            <span class="help-block">Descrição da Modalidade</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">                                        
-                                        <label class="col-md-3 col-xs-12 control-label">Iniciada em</label>
-                                        <div class="col-md-6 col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                                <input type="text" class="form-control datepicker" value="2014-11-01">                                            
-                                            </div>
-                                            <span class="help-block">Clique no campo de entrada para obter a data</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label class="col-md-3 col-xs-12 control-label">Status</label>
-                                        <div class="col-md-6 col-xs-12">                                                                                                                                        
-                                            <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> Ativo</label>
-                                        </div>
-                                    </div>
+
+                                <div class="panel-body panel-body-table">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-actions">
+                                            <thead>
+                                                <tr>
+                                                    <th width="40">ID</th>
+                                                    <th>Nome</th>
+                                                    <th>Idade</th>
+                                                    <th width="40">Ação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                            
+                                                <tr id="trow_1">
+                                                    <td class="text-center">1</td>
+                                                    <td><strong>Miguel Barros Moura</strong></td>
+                                                    <td>33 Anos</td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trow_2">
+                                                    <td class="text-center">2</td>
+                                                    <td><strong>Gabriel Monteiro Novaes</strong></td>
+                                                    <td>25 Anos</td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_2');"><span class="fa fa-times"></span></button>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trow_3">
+                                                    <td class="text-center">3</td>
+                                                    <td><strong>Sophia Oliveira Carvalho</strong></td>
+                                                    <td>27 Anos</td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_3');"><span class="fa fa-times"></span></button>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trow_4">
+                                                    <td class="text-center">4</td>
+                                                    <td><strong>Ana Luiza Pires Nunes</strong></td>
+                                                    <td>20 Anos</td>
+                                                    <td>
+                                                        <button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_4');"><span class="fa fa-times"></span></button>
+                                                    </td>
+                                                </tr>                                                
+                                            </tbody>
+                                        </table>
+                                    </div>                                
 
                                 </div>
-                                <div class="panel-footer">
-                                    <button class="btn btn-default">Limpar Formulário</button>                                    
-                                    <button class="btn btn-primary pull-right">Gravar</button>
-                                </div>
-                            </div>
-                            </form>
+                            </div>                                                
+
+                        </div>
+                    </div>
+                    <!-- END RESPONSIVE TABLES -->
 
                         </div>
                     </div>
@@ -151,6 +172,26 @@
             <!-- END PAGE CONTENT -->
         </div>
         <!-- END PAGE CONTAINER -->
+
+        <!-- MESSAGE BOX-->
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span> Remover <strong>Aluno</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Você realmente quer remover o Aluno?</p>
+                        <p>Pressione Sim se tiver certeza.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">Yes</button>
+                            <button class="btn btn-default btn-lg mb-control-close">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MESSAGE BOX-->         
 
         <!-- MESSAGE BOX-->
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
@@ -188,11 +229,8 @@
         <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
         
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>                
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
-        <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
-        <!-- END THIS PAGE PLUGINS -->               
+        <script type="text/javascript" src="js/demo_tables.js"></script>     
+        <!-- END PAGE PLUGINS -->         
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/plugins.js"></script>        
