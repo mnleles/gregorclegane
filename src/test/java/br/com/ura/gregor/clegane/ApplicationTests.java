@@ -1,4 +1,4 @@
-package br.com.template;
+package br.com.ura.gregor.clegane;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TemplateApplicationTests {
+public class ApplicationTests {
 
 	@Test
 	public void contextLoads() {
