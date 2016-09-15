@@ -2,7 +2,7 @@ package br.com.ura.gregor.clegane.model;
 
 import org.springframework.data.annotation.Id;
 
-public class AbstractModel
+public abstract class AbstractModel
 {
 	@Id
 	public String id;
