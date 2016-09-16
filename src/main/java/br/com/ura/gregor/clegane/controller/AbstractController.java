@@ -26,37 +26,32 @@ public abstract class AbstractController<T extends AbstractModel>
 		return ResponseEntity.status(HttpStatus.OK).body(getService().fetchAll());
 	}
 
-	@RequestMapping(method = RequestMethod.POST, consumes = "application/json")
-	public ResponseEntity<Void> insert(@Valid @RequestBody T entity) throws Exception
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<T> fetchById(@PathVariable("id") String id)
+	{
+		return ResponseEntity.status(HttpStatus.OK).body(getService().fetchById(id));
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<T> insert(@Valid @RequestBody T entity)
 	{
 		entity = getService().insert(entity);
 
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(entity.getId()).toUri();
 
-		return ResponseEntity.created(uri).build();
+		return ResponseEntity.created(uri).body(entity);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> fetchById(@PathVariable("id") String id) throws Exception
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<T> update(@RequestBody T entity)
 	{
-		T entity = getService().fetchById(id);
-
-		return ResponseEntity.status(HttpStatus.OK).body(entity);
+		return ResponseEntity.status(HttpStatus.OK).body(getService().update(entity));
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> delete(@PathVariable("id") String id) throws Exception
 	{
 		getService().delete(id);
-		return ResponseEntity.noContent().build();
-	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> update(@RequestBody T entity, @PathVariable("id") String id) throws Exception
-	{
-		entity.setId(id);
-		getService().update(entity);
-
 		return ResponseEntity.noContent().build();
 	}
 }

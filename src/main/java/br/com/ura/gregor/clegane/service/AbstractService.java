@@ -2,7 +2,6 @@ package br.com.ura.gregor.clegane.service;
 
 import java.util.List;
 
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import br.com.ura.gregor.clegane.model.AbstractModel;
@@ -16,52 +15,34 @@ public abstract class AbstractService<T extends AbstractModel>
 		return getRepository().findAll();
 	}
 
-	public T fetchById(String id) throws Exception
+	public T fetchById(String id)
 	{
-		T entity = getRepository().findOne(id);
-		if (entity == null)
-		{
-			throw new Exception();
-		}
-
-		return entity;
+		return getRepository().findOne(id);
 	}
 
-	public T insert(T entity) throws Exception
+	public T insert(T entity)
 	{
 		if (entity.getId() != null)
 		{
-			T result = getRepository().findOne(entity.getId());
-
-			if (result != null)
-			{
-				throw new Exception();
-			}
+			return null;
 		}
 
 		return getRepository().save(entity);
 	}
 
-	public void delete(String id) throws Exception
+	public void delete(String id)
 	{
-		try
-		{
-			getRepository().delete(id);
-		}
-		catch (EmptyResultDataAccessException e)
-		{
-			throw new Exception();
-		}
+		getRepository().delete(id);
 	}
 
-	public void update(T entity) throws Exception
+	public T update(T entity)
 	{
 		T result = getRepository().findOne(entity.getId());
 		if (result == null)
 		{
-			throw new Exception();
+			return null;
 		}
 
-		getRepository().save(entity);
+		return getRepository().save(entity);
 	}
 }
