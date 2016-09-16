@@ -4,11 +4,9 @@ import java.util.List;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Service;
 
 import br.com.ura.gregor.clegane.model.AbstractModel;
 
-@Service
 public abstract class AbstractService<T extends AbstractModel>
 {
 	protected abstract MongoRepository<T, String> getRepository();
