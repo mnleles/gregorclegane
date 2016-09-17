@@ -2,6 +2,12 @@ package br.com.ura.gregor.clegane.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import br.com.ura.gregor.clegane.converter.LocalDateDeserializer;
+import br.com.ura.gregor.clegane.converter.LocalDateSerializer;
+
 public class Membership extends AbstractModel
 {
 	private String name;
@@ -9,6 +15,8 @@ public class Membership extends AbstractModel
 	private String email;
 	private String rg;
 	private String cpf;
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate dateBirth;
 	private String address;
 	private String neighborhood;
