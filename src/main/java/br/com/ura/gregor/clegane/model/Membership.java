@@ -2,12 +2,15 @@ package br.com.ura.gregor.clegane.model;
 
 import java.time.LocalDate;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import br.com.ura.gregor.clegane.converter.LocalDateDeserializer;
 import br.com.ura.gregor.clegane.converter.LocalDateSerializer;
 
+@Document
 public class Membership extends AbstractModel
 {
 	private String name;
