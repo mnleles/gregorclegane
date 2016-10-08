@@ -28,7 +28,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
 				.and()
 				.formLogin()
 				.loginPage("/pages-login.html")
-				.defaultSuccessUrl("/index.html")
+				.defaultSuccessUrl("/index_admin.html")
 				.failureUrl("/pages-login.html?error=true")
 				.and()
 				.logout().logoutSuccessUrl("/pages-login.html")
@@ -44,7 +44,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
 				.antMatchers("/audio/**")
 				.antMatchers("/css/**")
 				.antMatchers("/img/**")
-				.antMatchers("/js/**");
+				.antMatchers("/js/**")
+				.antMatchers("/landingpage/**");
 	}
 
 	@Override
